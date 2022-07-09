@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".features.countriesList.screens.CountryDetailsFragment"
     android:layout_marginEnd="14dp"
     android:visibility="invisible"
+    tools:context=".features.countriesList.screens.CountryDetailsFragment"
     tools:visibility="visible">
 
     <TextView
@@ -34,6 +34,19 @@
         app:layout_constraintTop_toBottomOf="@id/info_title"
         app:shapeAppearanceOverlay="@style/ShapeAppearance.Flag"
         tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/flag_emoji"
+        android:layout_width="144dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="37dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/info_title" />
 
     <TextView
         android:id="@+id/country_name"

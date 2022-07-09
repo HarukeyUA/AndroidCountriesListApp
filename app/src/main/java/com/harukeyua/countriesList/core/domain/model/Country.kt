@@ -10,7 +10,8 @@ data class Country(
     val capital: String,
     val phone: String,
     val currency: String,
-    val language: String
+    val language: String,
+    val emojiCode: String
 )
 
 fun CountriesQuery.Country.toDomain(): Country {
@@ -21,7 +22,8 @@ fun CountriesQuery.Country.toDomain(): Country {
         capital = capital ?: "",
         phone = phone,
         currency = currency ?: "",
-        language = languages.firstOrNull()?.name ?: ""
+        language = languages.firstOrNull()?.name ?: "",
+        emojiCode = emoji
     )
 }
 
@@ -33,6 +35,7 @@ fun CountryEntity.toDomain(): Country {
         capital = capital,
         phone = phone,
         currency = currency,
-        language = language
+        language = language,
+        emojiCode = emojiCode
     )
 }

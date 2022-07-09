@@ -12,6 +12,7 @@ data class CountryItemModel(
     val phone: String,
     val currency: String,
     val language: String,
+    val emojiCode: String,
     val selected: Boolean = false
 ) : ItemModel {
     val flagResource: Int?
@@ -44,6 +45,7 @@ fun Country.toItemModel(): CountryItemModel {
         capital = capital,
         phone = phone,
         currency = currency,
-        language = language
+        language = language,
+        emojiCode = emojiCode
     )
 }

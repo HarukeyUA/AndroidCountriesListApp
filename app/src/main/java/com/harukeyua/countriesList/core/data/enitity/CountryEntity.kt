@@ -13,7 +13,8 @@ data class CountryEntity(
     val capital: String,
     val phone: String,
     val currency: String,
-    val language: String
+    val language: String,
+    val emojiCode: String
 )
 
 fun Country.toEntity(): CountryEntity {
@@ -24,6 +25,7 @@ fun Country.toEntity(): CountryEntity {
         capital = capital,
         phone = phone,
         currency = currency,
-        language = language
+        language = language,
+        emojiCode = emojiCode
     )
 }

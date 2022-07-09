@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -85,9 +86,12 @@ class CountriesListFragment : Fragment() {
             }
             bind {
                 with(binding) {
+                    flagImage.isVisible = item.flagResource != null
+                    flagEmoji.isVisible = item.flagResource == null
                     item.flagResource?.also {
                         flagImage.setImageResource(it)
                     } ?: flagImage.setImageDrawable(null)
+                    flagEmoji.text = item.emojiCode
                     name.text = item.name
                     root.setCardBackgroundColor(
                         if (item.selected)
