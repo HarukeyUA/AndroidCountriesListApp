@@ -5,7 +5,7 @@ Implementation of test assignment Android app for displaying simple list of coun
 Tech stack:
 * Kotlin
 * Android Views
-* Kotlin Coroutines/Flow
+* Kotlin Coroutines and Flow
 * Apollo
 * Room
 
