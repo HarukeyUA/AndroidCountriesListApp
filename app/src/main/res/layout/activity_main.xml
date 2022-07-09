@@ -6,6 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".features.countriesList.MainActivity">
 
+    <FrameLayout
+        android:id="@+id/header"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/main_gray">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="14dp"
+            android:textSize="12sp"
+            android:fontFamily="@font/montserrat_medium"/>
+
+    </FrameLayout>
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/countries_list_fragment"
         android:name="com.harukeyua.countriesList.features.countriesList.screens.CountriesListFragment"
@@ -14,7 +35,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/guideline"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/header" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/country_info_fragment"
@@ -24,7 +45,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/guideline"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/header" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
