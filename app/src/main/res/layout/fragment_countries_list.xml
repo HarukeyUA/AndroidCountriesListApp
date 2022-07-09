@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".features.countriesList.screens.CountriesListFragment">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="14dp"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="2dp"
+        app:strokeColor="@color/middle_gray"
+        app:strokeWidth="0.5dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/title_background"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:background="@color/background_white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="@string/countries_title"
+                android:textColor="@color/main_gray"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/title_background"
+                app:layout_constraintEnd_toEndOf="@id/title_background"
+                app:layout_constraintStart_toStartOf="@id/title_background"
+                app:layout_constraintTop_toTopOf="@id/title_background" />
+
+            <View
+                android:id="@+id/title_divider"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:background="@color/middle_gray"
+                app:layout_constraintEnd_toEndOf="@id/title_background"
+                app:layout_constraintStart_toStartOf="@id/title_background"
+                app:layout_constraintTop_toBottomOf="@id/title_background" />
+
+            <EditText
+                android:id="@+id/search_edit_text"
+                style="@style/SearchBox"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:layout_marginHorizontal="14dp"
+                android:layout_marginTop="14dp"
+                android:autofillHints="@null"
+                android:hint="@string/countries_search_hint"
+                android:inputType="text|textCapSentences"
+                android:maxLength="50"
+                android:maxLines="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title_divider" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/countries_list"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:clipToPadding="false"
+                android:paddingTop="14dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/search_edit_text"
+                tools:listitem="@layout/country_list_item" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>

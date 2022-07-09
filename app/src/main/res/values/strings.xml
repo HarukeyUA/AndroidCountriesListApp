@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Countries List</string>
+    <string name="countries_title">Countries</string>
+    <string name="countries_search_hint">Search</string>
+    <string name="country_info_title">Info</string>
+    <string name="info_continent_title">Continent</string>
+    <string name="info_capital_title">Capital</string>
+    <string name="info_code_title">Code</string>
+    <string name="info_phone_title">Phone</string>
+    <string name="info_currency_title">Currency</string>
+    <string name="info_language_title">Language</string>
 </resources>

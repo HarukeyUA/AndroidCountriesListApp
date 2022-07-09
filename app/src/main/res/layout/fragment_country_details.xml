@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".features.countriesList.screens.CountryDetailsFragment"
+    android:layout_marginEnd="14dp">
+
+    <TextView
+        android:id="@+id/info_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/montserrat_semi_bold"
+        android:text="@string/country_info_title"
+        android:textColor="@color/main_gray"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:viewBindingIgnore="true" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/flag_image"
+        android:layout_width="144dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="37dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/info_title"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.Flag"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/country_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="14dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:maxLines="1"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/flag_image"
+        tools:text="@tools:sample/lorem" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/continent_container"
+        style="@style/CountryInfoCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="6dp"
+        app:layout_constraintBottom_toTopOf="@id/code_container"
+        app:layout_constraintEnd_toStartOf="@id/capital_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/country_name"
+        tools:viewBindingIgnore="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/continent_indicator"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/info_indicator_shape"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:viewBindingIgnore="true" />
+
+            <TextView
+                android:id="@+id/card_continent_title"
+                style="@style/InfoCardTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:text="@string/info_continent_title"
+                app:layout_constraintBaseline_toBottomOf="@+id/continent_indicator"
+                app:layout_constraintStart_toEndOf="@id/continent_indicator"
+                app:layout_constraintTop_toTopOf="@+id/continent_indicator"
+                tools:viewBindingIgnore="true" />
+
+            <TextView
+                android:id="@+id/continent_info"
+                style="@style/InfoCardContent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginBottom="18dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/card_continent_title"
+                app:layout_constraintTop_toBottomOf="@id/card_continent_title"
+                tools:text="@tools:sample/lorem" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/capital_container"
+        style="@style/CountryInfoCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="6dp"
+        app:layout_constraintBottom_toTopOf="@id/phone_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/continent_container"
+        app:layout_constraintTop_toBottomOf="@+id/country_name"
+        tools:viewBindingIgnore="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/capital_indicator"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/info_indicator_shape"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:viewBindingIgnore="true" />
+
+            <TextView
+                android:id="@+id/card_capital_title"
+                style="@style/InfoCardTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:text="@string/info_capital_title"
+                app:layout_constraintBaseline_toBottomOf="@+id/capital_indicator"
+                app:layout_constraintStart_toEndOf="@id/capital_indicator"
+                app:layout_constraintTop_toTopOf="@+id/capital_indicator"
+                tools:viewBindingIgnore="true" />
+
+            <TextView
+                android:id="@+id/capital_info"
+                style="@style/InfoCardContent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginBottom="18dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/card_capital_title"
+                app:layout_constraintTop_toBottomOf="@id/card_capital_title"
+                tools:text="@tools:sample/lorem" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/code_container"
+        style="@style/CountryInfoCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="6dp"
+        app:layout_constraintBottom_toTopOf="@id/currency_container"
+        app:layout_constraintEnd_toStartOf="@id/phone_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/continent_container"
+        tools:viewBindingIgnore="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/code_indicator"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/info_indicator_shape"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:viewBindingIgnore="true" />
+
+            <TextView
+                android:id="@+id/card_code_title"
+                style="@style/InfoCardTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:text="@string/info_code_title"
+                app:layout_constraintBaseline_toBottomOf="@+id/code_indicator"
+                app:layout_constraintStart_toEndOf="@id/code_indicator"
+                app:layout_constraintTop_toTopOf="@+id/code_indicator"
+                tools:viewBindingIgnore="true" />
+
+            <TextView
+                android:id="@+id/code_info"
+                style="@style/InfoCardContent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginBottom="18dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/card_code_title"
+                app:layout_constraintTop_toBottomOf="@id/card_code_title"
+                tools:text="@tools:sample/lorem" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/phone_container"
+        style="@style/CountryInfoCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="6dp"
+        app:layout_constraintBottom_toTopOf="@id/language_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/code_container"
+        app:layout_constraintTop_toBottomOf="@id/capital_container"
+        tools:viewBindingIgnore="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/phone_indicator"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/info_indicator_shape"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:viewBindingIgnore="true" />
+
+            <TextView
+                android:id="@+id/card_phone_title"
+                style="@style/InfoCardTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:text="@string/info_phone_title"
+                app:layout_constraintBaseline_toBottomOf="@+id/phone_indicator"
+                app:layout_constraintStart_toEndOf="@id/phone_indicator"
+                app:layout_constraintTop_toTopOf="@+id/phone_indicator"
+                tools:viewBindingIgnore="true" />
+
+            <TextView
+                android:id="@+id/phone_info"
+                style="@style/InfoCardContent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginBottom="18dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/card_phone_title"
+                app:layout_constraintTop_toBottomOf="@id/card_phone_title"
+                tools:text="@tools:sample/lorem" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/currency_container"
+        style="@style/CountryInfoCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/language_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/code_container"
+        tools:viewBindingIgnore="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/currency_indicator"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/info_indicator_shape"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:viewBindingIgnore="true" />
+
+            <TextView
+                android:id="@+id/card_currency_title"
+                style="@style/InfoCardTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:text="@string/info_currency_title"
+                app:layout_constraintBaseline_toBottomOf="@+id/currency_indicator"
+                app:layout_constraintStart_toEndOf="@id/currency_indicator"
+                app:layout_constraintTop_toTopOf="@+id/currency_indicator"
+                tools:viewBindingIgnore="true" />
+
+            <TextView
+                android:id="@+id/currency_info"
+                style="@style/InfoCardContent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginBottom="18dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/card_currency_title"
+                app:layout_constraintTop_toBottomOf="@id/card_currency_title"
+                tools:text="@tools:sample/lorem" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/language_container"
+        style="@style/CountryInfoCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/currency_container"
+        app:layout_constraintTop_toBottomOf="@id/phone_container"
+        tools:viewBindingIgnore="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/language_indicator"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/info_indicator_shape"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:viewBindingIgnore="true" />
+
+            <TextView
+                android:id="@+id/card_language_title"
+                style="@style/InfoCardTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:text="@string/info_language_title"
+                app:layout_constraintBaseline_toBottomOf="@+id/language_indicator"
+                app:layout_constraintStart_toEndOf="@id/language_indicator"
+                app:layout_constraintTop_toTopOf="@+id/language_indicator"
+                tools:viewBindingIgnore="true" />
+
+            <TextView
+                android:id="@+id/language_info"
+                style="@style/InfoCardContent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginBottom="18dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/card_language_title"
+                app:layout_constraintTop_toBottomOf="@id/card_language_title"
+                tools:text="@tools:sample/lorem" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

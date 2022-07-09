@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="SearchBox">
+        <item name="android:background">@null</item>
+        <item name="android:drawableEnd">@drawable/ic_search</item>
+        <item name="android:foreground">@drawable/search_field_shape</item>
+        <item name="android:paddingStart">11dp</item>
+        <item name="android:paddingEnd">6dp</item>
+        <item name="android:textColorHint">@color/middle_gray</item>
+        <item name="fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="CountryInfoCard">
+        <item name="cardElevation">0dp</item>
+        <item name="strokeWidth">0.5dp</item>
+        <item name="strokeColor">@color/middle_gray</item>
+    </style>
+
+    <style name="ShapeAppearance.Flag" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSize">5dp</item>
+    </style>
+
+    <style name="InfoCardTitle">
+        <item name="android:fontFamily">@font/montserrat_semi_bold</item>
+        <item name="android:textColor">@color/main_gray</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="InfoCardContent">
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+</resources>
