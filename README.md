@@ -8,6 +8,8 @@ Tech stack:
 * Kotlin Coroutines and Flow
 * Apollo
 * Room
+* Hilt
+* RecyclerView delegation adapter library
 
 Features:
 * Fetching countries info using [countries](https://github.com/trevorblades/countries) GraphQL api using Apollo network client
